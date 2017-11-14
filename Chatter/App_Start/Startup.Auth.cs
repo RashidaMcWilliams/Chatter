@@ -58,11 +58,11 @@ namespace Chatter
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "759063171713-qe6o78jjttlhs6qies2h2bphfn478iui.apps.googleusercontent.com",
+                ClientSecret = "EaoDmG4dGFfOYeb5FGEYr4ji"
+            });
         }
     }
 }
