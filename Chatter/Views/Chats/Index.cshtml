@@ -20,12 +20,16 @@
         //$("#response").text(jsonTest.each("children", function(index, value){
         //console.log(index + ':' + value);
         //}));
-       
+
         $.each(jsonTest.children, function () {
-            $.each(this, function (firstName, age) {
-                $("#response").text(firstName + ':' + age);
+            $.each(this, function (name, value) {
+                $("#response").append(name + ': ' + value + '<br/>');
             });
         });
+
+        //$("#response").text(jsonTest.children[0, 1]);
+        //$.each(this, function (firstName, age) {
+        //});
     </script>
 }
 
