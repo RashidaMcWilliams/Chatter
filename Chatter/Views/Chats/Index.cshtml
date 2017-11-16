@@ -16,13 +16,13 @@
 @section Scripts {
     <script>
         //AJAX request using jQuery as a helper
-        //Notice this combines Razor syntax (@Url.Action()) in order to
+        //Notice this combines Razor syntax (@*@Url.Action()*@) in order to
         //have the compiler figure out the exact path of the controller,
         //alongside of jQuery.
         @*$.get("@Url.Action("TestJson","Chats")", function (response) {
             alert(response);
         });*@
-        //var jsonTest = { "firstName": "Bob", "lastName": "Sauce", "children": [{ "firstName": "Barbie", "age": 19 }, { "firstName": "Ron", "age": null }] }
+        var jsonTest = { "firstName": "Bob", "lastName": "Sauce", "children": [{ "firstName": "Barbie", "age": 19 }, { "firstName": "Ron", "age": null }] }
     
         //$("#response").text(jsonTest.each("children", function(index, value){
         //console.log(index + ':' + value);
@@ -38,11 +38,20 @@
         //$.each(this, function (firstName, age) {
         //});
 
-        $.get("@Url.Action("TestJson","Chats")", function (serverResponse) {
-            var jsonTest = JSON.parse(serverResponse);
-            console.log(jsonTest);
+        //$("#getChats").click(function () {
+        //    alert('button clicked');
+        //}
+        //);
+
+        $("#getChats").click(function (serverResponse) {
             $("#response").text(jsonTest.firstName);
         });
+
+        //$("#getChats").click(function (serverResponse) {
+        //    var jsonTest = JSON.parse(serverResponse);
+        //    console.log(jsonTest);
+        //    $("#response").text(jsonTest.firstName);
+        //});
     </script>
 }
 
